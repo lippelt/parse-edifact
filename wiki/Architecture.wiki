@@ -20,7 +20,7 @@ Then, any _Data Element Separator_ creates a *`<U>`* element *and* *`<V>`* eleme
 
 Finally, after this data, you either got (1) a _Component Data Element Separator_ that creates a new following-sibling *`<V>`* element, (2) a new _Data Element Separator_ that creates a new *`<U>`* element, with its own *`<V>`* child element, or you reach the end of segment.
 
-_*Done ;-)*_
+_*Done ;-)*_ Anyway, always better to give some *examples*...
 
 === Example 1 ====
 
@@ -97,3 +97,5 @@ Remark. I have added a sequential counter to the *`<S>`* element, within the *`n
 }}}
 
 == My Pre-Parsing Algorithm ===
+
+_To be continued..._
