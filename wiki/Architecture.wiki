@@ -22,9 +22,78 @@ Finally, after this data, you either got (1) a _Component Data Element Separator
 
 _*Done ;-)*_
 
+=== Example 1 ====
 
+{{{BGM+220+123350+9'}}}
+{{{
+<S n="3">
+  <N>BGM</N>
+  <U>
+    <V>220</V>
+  </U>
+  <U>
+    <V>123350</V>
+  </U>
+  <U>
+    <V>9</V>
+  </U>
+</S>
+}}}
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Remark. I have added a sequential counter to the *`<S>`* element, within the *`n`* attribute, for the optimization of the XSLT parser. You will see its usage later ;-)
+
+=== Example 2 ===
+
+{{{DTM+4:20011107:102'}}}
+{{{
+<S n="4">
+  <N>DTM</N>
+  <U>
+    <V>4</V>
+    <V>20011107</V>
+    <V>102</V>
+  </U>
+</S>
+}}}
+
+=== Example 3 ===
+
+{{{LIN+1++STU62001LW-K:BP'}}}
+{{{
+<S n="11">
+  <N>LIN</N>
+  <U>
+    <V>1</V>
+  </U>
+  <U>
+    <V/>
+  </U>
+  <U>
+    <V>STU62001LW-K</V>
+    <V>BP</V>
+  </U>
+</S>
+}}}
+
+=== Example 4 ===
+
+{{{IMD++3+:::SEAGATE VIPER EXT LVD 200G ULTRIUM'}}}
+{{{
+<S n="12">
+  <N>IMD</N>
+  <U>
+    <V/>
+  </U>
+  <U>
+    <V>3</V>
+  </U>
+  <U>
+    <V/>
+    <V/>
+    <V/>
+    <V>SEAGATE VIPER EXT LVD 200G ULTRIUM</V>
+  </U>
+</S>
+}}}
+
+== My Pre-Parsing Algorithm ===
