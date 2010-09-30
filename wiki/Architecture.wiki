@@ -1,4 +1,4 @@
-#How does it work?
+#summary One-sentence summary of this page.
 
 = Introduction =
 
