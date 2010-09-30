@@ -12,7 +12,15 @@ And, finally, the trick is quite easy. You just need to *pre-parse* the *syntax*
 
 == My super-simple grammar ==
 
-The root tag is *`<F>`*. Every segment creates a *`<S>`* element, which then are the only children of *`<F>`*. Each *`<S>`* element has a single *`<N>`* element as its first child. It contains the 3-letter code of the segment, e.g. UNH, BGM, DTM, etc.
+The root tag is *`<F>`*.
+
+Every segment creates a *`<S>`* element, which are the only children of *`<F>`*. Each *`<S>`* element has a single *`<N>`* element as its first child. It contains the 3-letter code of the segment, e.g. UNH, BGM, DTM, etc.
+
+Then, any _Data Element Separator_ creates a *`<U>`* element *and* *`<V>`* element, as child of the *`<U>`* element. The data that is just after the _Data Element Separator_ always go into the first *`<V>`* element.
+
+Finally, after this data, you either got (1) a _Component Data Element Separator_ that creates a new following-sibling *`<V>`* element, (2) a new _Data Element Separator_ that creates a new *`<U>`* element, with its own *`<V>`* child element, or you reach the end of segment.
+
+_*Done ;-)*_
 
 
 
