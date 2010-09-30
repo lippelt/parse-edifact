@@ -1,4 +1,4 @@
-#summary How doe it work?
+#summary How does it work?
 
 = Introduction =
 
