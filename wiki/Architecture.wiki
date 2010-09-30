@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here.
+Using [http://en.wikipedia.org/wiki/XSLT XSLT] to transform an [http://en.wikipedia.org/wiki/XML/EDIFACT XML/EDIFACT] instance to an EDIFACT instance is quite natural, since an XSLT script can produce a plain text instance. On the other hand, the source document *must be a well-formed XML instance*, which means that XSLT does not look like the ideal tool to transform an EDIFACT instance to an [http://en.wikipedia.org/wiki/XML/EDIFACT XML/EDIFACT] instance.
 
 
 = Details =
