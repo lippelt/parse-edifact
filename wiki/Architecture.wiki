@@ -16,7 +16,7 @@ The root tag is *`<F>`*.
 
 Every segment creates a *`<S>`* element, which are the only children of *`<F>`*. Each *`<S>`* element has a single *`<N>`* element as its first child. It contains the 3-letter code of the segment, e.g. UNH, BGM, DTM, etc.
 
-Then, any _Data Element Separator_ creates a *`<U>`* element *and* *`<V>`* element, as child of the *`<U>`* element. The data that is just after the _Data Element Separator_ always go into the first *`<V>`* element.
+Then, any _Data Element Separator_ creates a *`<U>`* element and *`<V>`* element, as child of the *`<U>`* element. The data that is just after the _Data Element Separator_ always go into the first *`<V>`* element.
 
 Finally, after this data, you either got (1) a _Component Data Element Separator_ that creates a new following-sibling *`<V>`* element, (2) a new _Data Element Separator_ that creates a new *`<U>`* element, with its own *`<V>`* child element, or you reach the end of segment.
 
@@ -97,5 +97,26 @@ Remark. I have added a sequential counter to the *`<S>`* element, within the *`n
 }}}
 
 == My Pre-Parsing Algorithm ===
+
+1. Parse the UNA segment, or *set* the following parameters with their respective default values: 
+
+|| _Segment Terminator_               || Chr(39) || ' ||
+|| _Data Element Separator_           || Chr(43) || + ||
+|| _Component Data Element Separator_ || Chr(58) || : ||
+|| _Release Character_                || Chr(63) || ? ||
+
+2. *Set* the _Previous Delimiter_ as the _Segment Terminator_
+
+3. *Loop*: read the next character into the _Current Character_ until the end of the EDIFACT instance:
+
+3.1. *If* the _Current Character_ is the _Release Character_ *then* the _Value_ is concatenate with the next character.
+
+3.2. *If* the _Current Character_ is the _Segment Terminator_ *then*
+
+3.2.1. *If* the _Previous Delimiter_ is the _Data Element Separator_ *then*
+
+3.2.1.1. Creates a *`<U>`* element and *`<V>`* element, as child of the *`<U>`* element, and
+
+3.2.1.2. Set the text of *`<V>`* as the _Value_.
 
 _To be continued..._
